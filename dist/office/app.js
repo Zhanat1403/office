@@ -17,7 +17,7 @@ const renderers = {
 
 const attachmentLimit = 4;
 const uploadLimit = 3 * 1024 * 1024;
-const agentDefault = 'strategist';
+const agentDefault = 'personal';
 const emptyData = () => ({
   user: null, projects: [], documents: [], threads: [], settings: {}, models: [], aiConfigured: false,
 });

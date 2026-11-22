@@ -3,7 +3,11 @@ import { parseDocument } from './document-parser.mjs'
 import { generate } from './gemini.mjs'
 import { getStore } from './store.mjs'
 
-const agents = new Set(['analytic', 'strategist', 'researcher', 'auditor', 'coordinator'])
+const agents = new Set([
+  'personal', 'finance', 'tutor', 'wellbeing', 'nutrition', 'fitness', 'medical', 'stylist', 'interior',
+  'travel', 'legal', 'career', 'parenting', 'shopping', 'content', 'home', 'coordinator',
+  'analytic', 'strategist', 'researcher', 'auditor',
+])
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 const maxChatBytes = 64 * 1024
 const maxChatDocuments = 4

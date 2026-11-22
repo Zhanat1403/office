@@ -10,23 +10,48 @@ export const labels = {
   settings: 'Настройки',
 };
 
-const agentInitials = {
-  analytic: 'АН', strategist: 'СТ', researcher: 'ИС', auditor: 'АУ', coordinator: 'КО',
-};
+const agentCatalog = [
+  { id: 'personal', name: 'Персональный ассистент', specialty: 'Организация повседневной жизни', description: 'Расписание, дела, поездки и покупки.', initials: 'ПА', src: '/balance-office/agent-analytic.png', alt: 'Абстрактная форма персонального ассистента', tone: '#e8eef0' },
+  { id: 'finance', name: 'Финансовый помощник', specialty: 'Бюджет и личные финансы', description: 'Расходы, накопления и крупные покупки.', initials: 'ФИ', src: '/balance-office/agent-strategist.png', alt: 'Абстрактная форма финансового помощника', tone: '#e6edf1' },
+  { id: 'tutor', name: 'ИИ-репетитор', specialty: 'Обучение и новые навыки', description: 'Объясняет, тренирует и строит учебный план.', initials: 'УР', src: '/balance-office/hero-orbital.png', alt: 'Абстрактная форма ИИ-репетитора', tone: '#edf0ec' },
+  { id: 'wellbeing', name: 'Психологический помощник', specialty: 'Эмоции и отношения', description: 'Помогает осмыслить ситуацию и найти опору.', initials: 'ПП', src: '/balance-office/agent-analytic.png', alt: 'Абстрактная форма психологического помощника', tone: '#f0ece9' },
+  { id: 'nutrition', name: 'ИИ-нутрициолог', specialty: 'Питание и привычки', description: 'Меню, рецепты, калорийность и список продуктов.', initials: 'НУ', src: '/balance-office/agent-strategist.png', alt: 'Абстрактная форма ИИ-нутрициолога', tone: '#edf1e8' },
+  { id: 'fitness', name: 'ИИ-фитнес-тренер', specialty: 'Активность и прогресс', description: 'Тренировки с учётом цели и текущей нагрузки.', initials: 'ФТ', src: '/balance-office/hero-orbital.png', alt: 'Абстрактная форма ИИ-фитнес-тренера', tone: '#e8eef0' },
+  { id: 'medical', name: 'Медицинский помощник', specialty: 'Подготовка к визиту к врачу', description: 'Объясняет документы и помогает собрать вопросы.', initials: 'МП', src: '/balance-office/agent-auditor.png', alt: 'Абстрактная форма медицинского помощника', tone: '#eeece8' },
+  { id: 'stylist', name: 'ИИ-стилист', specialty: 'Стиль и гардероб', description: 'Образы, сочетания и капсульный гардероб.', initials: 'СТ', src: '/balance-office/agent-strategist.png', alt: 'Абстрактная форма ИИ-стилиста', tone: '#f1e9ed' },
+  { id: 'interior', name: 'Дизайнер интерьера', specialty: 'Дом и пространство', description: 'Идеи для планировки, мебели и освещения.', initials: 'ДИ', src: '/balance-office/agent-auditor.png', alt: 'Абстрактная форма дизайнера интерьера', tone: '#eeeae4' },
+  { id: 'travel', name: 'Туристический консультант', specialty: 'Поездки и маршруты', description: 'Маршрут, бюджет и впечатления от путешествия.', initials: 'ТУ', src: '/balance-office/hero-orbital.png', alt: 'Абстрактная форма туристического консультанта', tone: '#e6edf1' },
+  { id: 'legal', name: 'Юрист-помощник', specialty: 'Документы и права', description: 'Помогает понять договоры и подготовить вопросы.', initials: 'ЮП', src: '/balance-office/agent-auditor.png', alt: 'Абстрактная форма юриста-помощника', tone: '#eeece8' },
+  { id: 'career', name: 'Карьерный консультант', specialty: 'Работа и развитие', description: 'Резюме, собеседования и профессиональный план.', initials: 'КК', src: '/balance-office/agent-analytic.png', alt: 'Абстрактная форма карьерного консультанта', tone: '#e8eef0' },
+  { id: 'parenting', name: 'Помощник родителя', specialty: 'Семья и развитие ребёнка', description: 'Поддержка в обучении, режиме и семейных задачах.', initials: 'ПР', src: '/balance-office/agent-analytic.png', alt: 'Абстрактная форма помощника родителя', tone: '#f0ece9' },
+  { id: 'shopping', name: 'Помощник по покупкам', specialty: 'Выбор товаров', description: 'Критерии, сравнение вариантов и список покупок.', initials: 'ПК', src: '/balance-office/agent-strategist.png', alt: 'Абстрактная форма помощника по покупкам', tone: '#edf1e8' },
+  { id: 'content', name: 'Контент-креатор', specialty: 'Идеи и личные проекты', description: 'Тексты, публикации, видео и презентации.', initials: 'КР', src: '/balance-office/hero-orbital.png', alt: 'Абстрактная форма контент-креатора', tone: '#e6edf1' },
+  { id: 'home', name: 'Домашний менеджер', specialty: 'Быт и домашние процессы', description: 'Запасы, поручения, уборка и бытовые планы.', initials: 'ДМ', src: '/balance-office/agent-auditor.png', alt: 'Абстрактная форма домашнего менеджера', tone: '#eeeae4' },
+  { id: 'coordinator', name: 'Майкл — Лайф-менеджер', specialty: 'Координация личной ИИ-команды', description: 'Собирает план и объединяет выводы специалистов.', initials: 'МЛ', src: '/balance-office/agent-coordinator.png', alt: 'Абстрактная форма лайф-менеджера', tone: '#e9eef1' },
+];
 
-export const agents = Object.fromEntries(Array.from(document.querySelectorAll('main .agent-card'), card => {
-  const id = card.dataset.agent;
-  const image = card.querySelector('img');
-  return [id, {
-    id,
-    name: card.querySelector('h3').textContent.trim(),
-    specialty: card.querySelector('.agent-card-copy p').textContent.trim(),
-    description: card.querySelector('.agent-description').textContent.trim(),
-    src: image.getAttribute('src'),
-    alt: image.alt,
-    initials: agentInitials[id],
-  }];
-}));
+export const agents = Object.fromEntries(agentCatalog.map(agent => [agent.id, agent]));
+
+function applyFeaturedAgentCards() {
+  const featured = ['personal', 'finance', 'tutor', 'medical', 'coordinator'];
+  const cards = document.querySelectorAll('main .agent-card');
+  cards.forEach((card, index) => {
+    const agent = agents[featured[index]];
+    if (!agent) return;
+    card.dataset.agent = agent.id;
+    card.style.setProperty('--agent-wash', agent.tone);
+    card.querySelector('.agent-card-copy p').textContent = agent.specialty;
+    card.querySelector('h3').textContent = agent.name;
+    card.querySelector('.agent-description').textContent = agent.description;
+    const image = card.querySelector('img');
+    if (image) {
+      image.src = agent.src;
+      image.alt = agent.alt;
+    }
+  });
+}
+
+applyFeaturedAgentCards();
 
 const dateShort = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long' });
 const dateFull = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -50,6 +75,50 @@ export function action(title, name, className = 'button-secondary', data = {}) {
   button.dataset.action = name;
   Object.assign(button.dataset, data);
   return button;
+}
+
+function agentCard(agent, index) {
+  const card = action('', 'new-chat', 'agent-card', { agent: agent.id });
+  card.style.setProperty('--agent-wash', agent.tone);
+  const meta = el('div', 'agent-card-meta');
+  meta.append(el('span', 'agent-number', String(index + 1).padStart(2, '0')));
+  const availability = el('span', 'agent-availability');
+  availability.append(el('span'), document.createTextNode(' Доступен'));
+  meta.append(availability);
+
+  const art = el('div', 'agent-art');
+  art.append(el('span', 'agent-initials-art', agent.initials));
+  const copy = el('div', 'agent-card-copy');
+  copy.append(el('p', '', agent.specialty), el('h3', '', agent.name), el('span', 'agent-description', agent.description));
+  const cardAction = el('div', 'agent-card-action');
+  cardAction.append(el('span', '', 'Открыть специалиста'), el('span', 'agent-action-circle', '↗'));
+  card.append(meta, art, copy, cardAction);
+  return card;
+}
+
+function renderAgentDirectory(main) {
+  const grid = main.querySelector('.directory-grid');
+  if (!grid) return;
+  grid.replaceChildren(...agentCatalog.map(agentCard));
+  set(main, '.page-heading h1', 'Личная ИИ-команда для жизни.');
+  set(main, '.page-heading .page-subtitle', 'Выберите помощника для конкретной задачи или поручите её Майклу.');
+  set(main, '.directory-intro p', '17 специалистов помогают с делами дома, здоровьем, обучением, финансами и личными проектами.');
+  set(main, '.directory-monogram', String(agentCatalog.length).padStart(2, '0'));
+
+  const collective = main.querySelector('.collective-section');
+  if (!collective) return;
+  set(collective, 'h2', 'Одна задача — общая картина.');
+  set(collective, 'p:not(.section-kicker)', 'Майкл привлекает подходящих специалистов и собирает план действий.');
+  set(collective, '.button-light', 'Открыть Майкла');
+  const roles = ['personal', 'finance', 'tutor', 'medical'];
+  for (const [index, id] of roles.entries()) {
+    const node = collective.querySelector(['.node-analytic', '.node-strategist', '.node-researcher', '.node-auditor'][index]);
+    if (!node) continue;
+    set(node, 'span', agents[id].initials);
+    set(node, 'small', agents[id].name);
+  }
+  const coordinator = collective.querySelector('.node-coordinator');
+  if (coordinator) set(coordinator, 'small', 'Майкл');
 }
 
 function set(node, selector, value) {
@@ -172,6 +241,7 @@ function task(thread) {
 }
 
 export function renderAvailability(main, state) {
+  renderAgentDirectory(main);
   if (state.dataLoading || state.data.aiConfigured) return;
   for (const badge of main.querySelectorAll('.agent-availability')) {
     dynamicText(badge, 'Не подключён');
@@ -181,10 +251,22 @@ export function renderAvailability(main, state) {
 
 export function renderDashboard(main, state) {
   dynamicText(main.querySelector('.page-heading .eyebrow'), capital(formatDate(new Date(), weekday)));
+  set(main, '.page-heading h1', 'Личный баланс на каждый день.');
+  set(main, '.page-heading .page-subtitle', 'Одна команда для дел, здоровья, денег и личных проектов.');
+  set(main, '.section-heading-row .section-kicker', 'Помощь в конкретной жизненной задаче');
+  set(main, '.section-heading-row h2', 'Начните с ключевых специалистов');
+  set(main, '.panel-index', `01 / ${String(agentCatalog.length).padStart(2, '0')}`);
   const input = main.querySelector('#task-input');
   input.value = state.dashboard.text;
   input.maxLength = 12000;
-  main.querySelector('.task-panel select').value = state.dashboard.agent;
+  const agentSelect = main.querySelector('.task-panel select');
+  const selectedAgent = agents[state.dashboard.agent] ? state.dashboard.agent : 'personal';
+  agentSelect.replaceChildren(
+    new Option('Вся команда — Майкл', 'all'),
+    ...agentCatalog.map(agent => new Option(agent.name, agent.id)),
+  );
+  agentSelect.value = selectedAgent;
+  state.dashboard.agent = selectedAgent;
   const active = state.data.threads.filter(thread => ['running', 'pending', 'failed', 'error'].includes(thread.status));
   const finished = state.data.threads.filter(thread => thread.status === 'completed');
   const tasks = main.querySelector('.task-list');
@@ -386,7 +468,7 @@ function workspaceDetail(main, state) {
 
 export function renderWorkspace(main, state) {
   const workspace = state.workspace;
-  const agent = agents[workspace.agent] || agents.strategist;
+  const agent = agents[workspace.agent] || agents.personal;
   set(main, '.page-heading h1', agent.name);
   set(main, '.page-heading .page-subtitle', agent.specialty);
   set(main, '.workspace-agent-picker .mini-agent-mark', agent.initials);
@@ -422,7 +504,7 @@ export function renderMessages(main, state) {
   const list = main.querySelector('.conversation-scroll');
   if (!list) return;
   const { workspace } = state;
-  const agent = agents[workspace.agent] || agents.strategist;
+  const agent = agents[workspace.agent] || agents.personal;
   const date = el('div', 'conversation-date');
   date.append(el('span'), formatDate(workspace.thread?.createdAt || new Date(), dateShort), el('span'));
   const expanded = new Set(Array.from(list.querySelectorAll('details[open][data-step]'), item => item.dataset.step));
