@@ -1,0 +1,417 @@
+.office-app [hidden],
+.office-dialog [hidden],
+.office-toast[hidden] {
+  display: none !important;
+}
+
+.office-app :focus-visible,
+.office-dialog :focus-visible {
+  outline: 2px solid #55768d;
+  outline-offset: 3px;
+}
+
+.office-app [role="button"] {
+  cursor: pointer;
+}
+
+.office-app .button-secondary:disabled,
+.office-app label.office-busy {
+  cursor: wait;
+  opacity: .55;
+}
+
+.office-app .recent-project-list {
+  display: contents;
+}
+
+.office-empty {
+  color: #5c6770;
+  font-size: .8125rem;
+  line-height: 1.55;
+  padding: .75rem .25rem;
+}
+
+.knowledge-list .office-empty,
+.history-panel .office-empty {
+  padding: 1rem;
+}
+
+.office-empty .text-link {
+  display: inline-flex;
+  font-size: inherit;
+}
+
+.office-single-column {
+  grid-template-columns: 1fr;
+}
+
+.office-app .office-danger,
+.office-dialog .office-danger,
+.office-form-error {
+  color: #8d3028;
+}
+
+.office-form-error {
+  overflow-wrap: anywhere;
+  font-size: .8125rem;
+  line-height: 1.5;
+}
+
+.office-row-link {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+}
+
+.office-row-link:hover,
+.office-composer-link:hover,
+.office-dialog-new:hover {
+  text-decoration: underline;
+}
+
+.office-panel-actions {
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .75rem;
+  margin-top: .7rem;
+  padding-top: .7rem;
+}
+
+.office-control,
+.office-select {
+  background: var(--white, #fff);
+  border: 1px solid #d7d8d3;
+  border-radius: 5px;
+  color: var(--ink, #192838);
+  font: inherit;
+  min-height: 2.25rem;
+  padding: .35rem .6rem;
+}
+
+.office-select {
+  max-width: 48%;
+}
+
+.office-dialog {
+  background: transparent;
+  border: 0;
+  margin: auto;
+  max-height: min(86dvh, 52rem);
+  max-width: calc(100vw - 1.5rem);
+  padding: 0;
+  width: 28rem;
+}
+
+.office-dialog::backdrop {
+  background: #18253662;
+}
+
+.office-dialog .office-dialog-panel {
+  box-shadow: 0 14px 44px #1b293128;
+  width: 100%;
+}
+
+.office-dialog .office-dialog-close {
+  color: #4d6474;
+  font-size: 1.35rem;
+  line-height: 1;
+  position: absolute;
+  right: .8rem;
+  top: .8rem;
+}
+
+.office-form,
+.office-dialog-options {
+  display: grid;
+  gap: .65rem;
+  margin-top: 1rem;
+}
+
+.office-dialog-caption {
+  color: #596875;
+  font-size: .8125rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.office-field {
+  color: #415464;
+  display: grid;
+  font-size: .8125rem;
+  gap: .25rem;
+}
+
+.office-field textarea {
+  min-height: 4rem;
+  resize: vertical;
+}
+
+.office-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: space-between;
+  margin-top: .25rem;
+}
+
+.office-form-actions > :last-child {
+  margin-left: auto;
+}
+
+.office-dialog-options .button-primary,
+.office-dialog-options .button-secondary {
+  justify-content: flex-start;
+  min-height: 2.35rem;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  text-align: left;
+}
+
+.office-dialog-options [aria-current="true"] {
+  border-color: #7c99a7;
+}
+
+.office-choice-list,
+.office-search-results {
+  max-height: 15rem;
+  overflow-y: auto;
+  padding: .15rem;
+}
+
+.office-choice {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  color: #415464;
+  cursor: pointer;
+  display: flex;
+  font-size: .8125rem;
+  gap: .55rem;
+  overflow-wrap: anywhere;
+  padding: .55rem .15rem;
+}
+
+.office-choice input {
+  accent-color: #335567;
+}
+
+.office-toast {
+  background: #213545;
+  border-radius: .35rem;
+  bottom: 1rem;
+  box-shadow: 0 4px 16px #14253230;
+  color: #fff;
+  font-size: .8125rem;
+  left: 50%;
+  line-height: 1.5;
+  max-width: min(30rem, calc(100vw - 2rem));
+  padding: .7rem 1rem;
+  position: fixed;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 120;
+}
+
+.office-attachment-strip {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin: 0 .4rem .45rem;
+}
+
+.task-panel .office-attachment-strip {
+  margin-top: .4rem;
+}
+
+.office-file-chip {
+  cursor: pointer;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.office-progress-label {
+  color: #596875;
+  font-size: .8125rem;
+}
+
+.office-app .office-composer-link,
+.office-app .office-dialog-new {
+  background: none;
+  border: 0;
+  color: #46647c;
+  cursor: pointer;
+  font-size: .75rem;
+  line-height: 1.2;
+  padding: .25rem .1rem;
+  text-align: left;
+}
+
+.office-app .office-logout {
+  margin-left: .75rem;
+}
+
+.office-app .message-user.office-user-message .message-content {
+  min-width: 4rem;
+}
+
+.office-user-copy {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.office-markdown {
+  max-width: min(42rem, 100%);
+  overflow-wrap: anywhere;
+}
+
+.office-markdown > :not(:first-child),
+.office-stage-body > :not(:first-child) {
+  margin-top: .55rem;
+}
+
+.office-markdown p + p {
+  margin-top: .55rem;
+}
+
+.office-markdown h3,
+.office-markdown h4,
+.office-markdown h5,
+.office-markdown h6 {
+  color: var(--ink);
+  font-weight: 650;
+  line-height: 1.34;
+}
+
+.office-markdown ul,
+.office-markdown ol {
+  padding-left: 1.2rem;
+}
+
+.office-markdown ul {
+  list-style: disc;
+}
+
+.office-markdown ol {
+  list-style: decimal;
+}
+
+.office-markdown a {
+  color: #385c75;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.office-markdown code {
+  background: #eeeee9;
+  border-radius: 3px;
+  color: #243e51;
+  padding: .1rem .2rem;
+}
+
+.office-markdown pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.office-markdown pre code {
+  display: block;
+  padding: .5rem;
+}
+
+.office-markdown blockquote {
+  border-left: 1px solid #9ab0bd;
+  margin-left: .2rem;
+  padding-left: .65rem;
+}
+
+.office-table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.office-table table {
+  border-collapse: collapse;
+  min-width: 100%;
+}
+
+.office-table th,
+.office-table td {
+  border: 1px solid #dfe1dc;
+  padding: .3rem .45rem;
+  text-align: left;
+}
+
+.office-table th {
+  background: #edf0ef;
+  color: #284152;
+}
+
+.office-agent-stages {
+  border-left: 1px solid #a8b9c1;
+  display: grid;
+  gap: .4rem;
+  padding-left: .65rem;
+}
+
+.office-stage-heading {
+  color: #425f73;
+  font-weight: 650;
+}
+
+.office-stage summary {
+  cursor: pointer;
+}
+
+.office-stage-body {
+  color: #44525c;
+  margin: .35rem 0 .55rem;
+}
+
+.office-message-tools {
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem .7rem;
+  padding-top: .45rem;
+}
+
+.office-compact .task-row,
+.office-compact .report-row,
+.office-compact .history-row {
+  min-height: 2.8rem;
+  padding-block: .3rem;
+}
+
+.office-app .office-unavailable span {
+  background: #a89476;
+}
+
+@media (max-width: 470px) {
+  .office-app .conversation-toolbar {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: .25rem;
+  }
+
+  .office-app .office-dialog-new,
+  .office-app .office-composer-link {
+    font-size: .6875rem;
+  }
+
+  .office-app .office-dialog-new {
+    margin-left: .2rem;
+  }
+
+  .office-app .office-panel-actions button {
+    max-width: 100%;
+  }
+}

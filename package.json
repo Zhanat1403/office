@@ -1,0 +1,19 @@
+{
+  "name": "balance-office",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server/http.mjs",
+    "dev": "node --env-file-if-exists=.env.local server/http.mjs",
+    "build": "node --input-type=module -e \"import fs from 'node:fs'; await import('./server/app.mjs'); fs.accessSync('dist/index.html')\""
+  },
+  "dependencies": {
+    "pg": "^8.23.1",
+    "saxes": "^6.0.0",
+    "unpdf": "^2.2.1",
+    "yauzl": "^3.4.0"
+  }
+}
